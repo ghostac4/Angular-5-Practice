@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.window{
+    background: radial-gradient(#2b58ce,#183780,#102049);
+    /* background: linear-gradient(.33turn,#102049,#2b58ce); */
+    height: auto;
+    margin: 0%;
+    overflow-y: visible;
+}
+p{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}

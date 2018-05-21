@@ -1,0 +1,59 @@
+<div class='player-container' fxLayout='row wrap' fxLayoutAlign='space-evenly start'>
+    <div class='gradient'>
+        <marquee direction="LEFT" scrollamount="5">
+            <p>MATCH 40: RR VS KXIP (LOCKED AT May 8 08:00 PM IST)</p>
+        </marquee>
+    </div>
+  <div class='list-container' fxFlex='45'>
+    <div fxLayout='row'>
+        <mat-form-field>
+            <mat-select [(value)]="selectedRole">
+              <mat-option value='All Roles'>All Roles</mat-option>
+              <mat-option value="Batsman">Batsman</mat-option>
+              <mat-option value="Bowler">Bowler</mat-option>
+              <mat-option value="All-rounder">All-rounder</mat-option>
+              <mat-option value="Wicketkeeper">Wicketkeeper</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+              <mat-select [(value)]="selectedNationality">
+                <mat-option value='All Nationality'>All Nationality</mat-option>
+                <mat-option value="Indian">Indian</mat-option>
+                <mat-option value="South African">South African</mat-option>
+                <mat-option value="Australian">Australian</mat-option>
+                <mat-option value="English">English</mat-option>
+                <mat-option value="West Indian">West Indian</mat-option>
+                <mat-option value="New Zealander">New Zealander</mat-option>
+                <mat-option value="Sri Lankan">Sri Lankan</mat-option>
+                <mat-option value="Bangladeshi">Bangladeshi</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select [(value)]="selectedBattingStyle">
+                  <mat-option value='All Batting Style'>All Batting Style</mat-option>
+                  <mat-option value="Right-handed">Right-handed</mat-option>
+                  <mat-option value="Left-handed">Left-handed</mat-option>
+                </mat-select>
+              </mat-form-field>
+    </div>
+    <div>
+        <mat-list>
+            <mat-nav-list>
+                <a mat-list-item (click)='selectedPlayer(player)' 
+                *ngFor="let player of (filteredPlayers | 
+                filterPlayer:selectedRole:selectedBattingStyle:selectedNationality)">
+                <p>{{player.player_name}}</p>
+                <img class='players-icon' src='assets/icons/overseas.png' *ngIf='player.player_nationality != "Indian"'>
+                <img class='players-icon' src='assets/icons/bat.png' *ngIf='player.player_role == "Batsman"'>
+                <img class='players-icon' src='assets/icons/ball.png' *ngIf='player.player_role == "Bowler"'>
+                <img class='players-icon' src='assets/icons/allrounder.png' *ngIf='(player.player_role)|search:"All-rounder"'>
+                <img class='players-icon' src='assets/icons/wkeeper.png' *ngIf='(player.player_role)|search:"Wicketkeeper"'>
+              </a>
+             </mat-nav-list>
+        </mat-list>
+    </div>
+  </div>
+  <div fxFlex='45'>
+    <app-player [player]='player'></app-player>
+  </div>
+</div>

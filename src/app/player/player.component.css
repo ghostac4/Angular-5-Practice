@@ -1,0 +1,23 @@
+.player-image{
+    display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width:50%;
+}
+p{
+    font-size: 1.2em;
+    color: bisque;
+}
+table{
+    background: #fffefe1c;
+    border-radius: 6%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%; 
+}
+td{
+    padding-left: 5%;
+}
+.player-container{
+    padding-top: 5%;
+}

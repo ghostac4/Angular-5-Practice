@@ -1,0 +1,21 @@
+.card{
+    margin-top: 3%;
+}
+.player-container{
+    padding-top: 5%;
+}
+.gradient{
+    background: linear-gradient(.33turn,#ef864e,#ac3f79);
+    width: 100%;
+    line-height: 1;
+}
+p{
+    font-size: 1.2em;
+    color: bisque;
+}
+.players-icon{
+    margin-left:5%;
+    display: block;
+    width:20px;
+    float: right;
+}

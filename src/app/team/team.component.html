@@ -1,0 +1,22 @@
+<div class='team-container' fxLayout='row wrap' fxLayoutAlign='space-evenly start'>
+  <mat-card class='card' *ngFor='let team of teamInfo;let i = index' fxFlex='21'
+  id="{{team.team_name}}" (click)='navigate(i+1)' 
+  (mouseover)='changeClass(true,"image"+i,"teamNameText"+i,"hoverData"+i)'
+  (mouseout)='changeClass(false,"image"+i,"teamNameText"+i,"hoverData"+i)'>
+    <mat-card-content>
+      <img id="image{{i}}" class='image' mat-card-image src='assets/{{team.team_img_url}}'>
+      <h3 id='teamNameText{{i}}' class='team-name-text' style='text-align: center;'>{{team.team_name}}</h3>
+      <div id='hoverData{{i}}' class='hover-data'>
+        <div class='hover-data-box'>
+          <p>Coach   : {{team.team_coach}}</p>
+          <p>Captain :{{team.team_captain}}</p>
+          <p>Venue   :{{team.team_home_venue}}</p>
+          <p>Owner   :{{team.team_owner}}</p>
+          <div class='player-box'>
+            <p>View Players</p>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
